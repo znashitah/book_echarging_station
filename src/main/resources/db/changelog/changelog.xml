@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- ChangeSet for creating USER table -->
+    <changeSet id="1-create-user-table" author="yourname">
+        <createTable tableName="USER">
+            <column name="USERID" type="INT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="FNAME" type="VARCHAR(45)"/>
+            <column name="LNAME" type="VARCHAR(45)"/>
+            <column name="EMAIL" type="VARCHAR(45)"/>
+            <column name="TYPE" type="ENUM('CUSTOMER', 'OWNER')">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PASSWORD" type="VARCHAR(45)"/>
+            <column name="GENDER" type="ENUM('FEMALE', 'MEN')"/>
+            <column name="DOB" type="INT"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="USER"/>
+        </rollback>
+    </changeSet>
+
+    <!-- ChangeSet for creating CHARGINGSTATION table -->
+    <changeSet id="2-create-chargingstation-table" author="yourname">
+        <createTable tableName="CHARGINGSTATION">
+            <column name="STATIONID" type="INT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="LOCATION" type="VARCHAR(45)"/>
+            <column name="PRICE" type="DECIMAL(7,2)"/>
+            <column name="CONTACT" type="VARCHAR(45)"/>
+            <column name="USER_USERID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint 
+            baseTableName="CHARGINGSTATION" 
+            baseColumnNames="USER_USERID" 
+            constraintName="fk_CHARGINGSTATION_USER"
+            referencedTableName="USER" 
+            referencedColumnNames="USERID"
+            onDelete="NO ACTION" 
+            onUpdate="NO ACTION"/>
+
+        <rollback>
+            <dropTable tableName="CHARGINGSTATION"/>
+        </rollback>
+    </changeSet>
+
+    <!-- ChangeSet for creating OWNER table -->
+    <changeSet id="3-create-owner-table" author="yourname">
+        <createTable tableName="OWNER">
+            <column name="OWNERID" type="INT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="USER_USERID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint 
+            baseTableName="OWNER" 
+            baseColumnNames="USER_USERID" 
+            constraintName="fk_OWNER_USER1"
+            referencedTableName="USER" 
+            referencedColumnNames="USERID"
+            onDelete="NO ACTION" 
+            onUpdate="NO ACTION"/>
+
+        <rollback>
+            <dropTable tableName="OWNER"/>
+        </rollback>
+    </changeSet>
+
+    <!-- ChangeSet for creating CUSTOMER table -->
+    <changeSet id="4-create-customer-table" author="yourname">
+        <createTable tableName="CUSTOMER">
+            <column name="CUSTOMERID" type="INT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="USER_USERID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint 
+            baseTableName="CUSTOMER" 
+            baseColumnNames="USER_USERID" 
+            constraintName="fk_CUSTOMER_USER1"
+            referencedTableName="USER" 
+            referencedColumnNames="USERID"
+            onDelete="NO ACTION" 
+            onUpdate="NO ACTION"/>
+
+        <rollback>
+            <dropTable tableName="CUSTOMER"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
