@@ -2,11 +2,13 @@ package de.hfu.svc.echarger.entity;
 
 import java.io.Serializable;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -40,6 +42,14 @@ public class User implements Serializable {
 
 	@Column(name = "DOB")
 	private Integer dob;
+
+	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+	private Customer customer;
+
+	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+	private Owner owner;
+
+	// Getters and Setters
 
 	// Getters and Setters
 

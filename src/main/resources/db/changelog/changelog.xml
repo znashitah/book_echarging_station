@@ -58,7 +58,7 @@
     <!-- ChangeSet for creating OWNER table -->
     <changeSet id="3-create-owner-table" author="yourname">
         <createTable tableName="OWNER">
-            <column name="OWNERID" type="INT">
+            <column name="OWNERID" type="INT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="USER_USERID" type="INT">
@@ -83,7 +83,7 @@
     <!-- ChangeSet for creating CUSTOMER table -->
     <changeSet id="4-create-customer-table" author="yourname">
         <createTable tableName="CUSTOMER">
-            <column name="CUSTOMERID" type="INT">
+            <column name="CUSTOMERID" type="INT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="USER_USERID" type="INT">
