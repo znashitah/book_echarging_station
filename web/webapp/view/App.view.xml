@@ -1,0 +1,13 @@
+<mvc:View
+    controllerName="my.app.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <App>
+        <Page title="Main Page">
+            <content>
+                <Button text="Users" press="onNavToUsers" />
+                <Button text="Charging Stations" press="onNavToChargingStations" />
+            </content>
+        </Page>
+    </App>
+</mvc:View>

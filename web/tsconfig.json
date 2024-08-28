@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "ES6",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "outDir": "dist",
+    "rootDir": "webapp",
+    "baseUrl": "./webapp",
+    "types": ["openui5"]
+  },
+  "include": [
+    "webapp/**/*.ts"
+  ]
+}

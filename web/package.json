@@ -1,0 +1,20 @@
+{
+  "name": "de.hfu.svc.echarger",
+  "version": "1.0.0",
+  "description": "Web App to book ECharging Stations ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nashitah Zainab",
+  "license": "ISC",
+  "dependencies": {
+    "@openui5/sap.m": "^1.127.0",
+    "@openui5/sap.ui.core": "^1.127.0",
+    "@openui5/sap.ui.layout": "^1.127.0"
+  },
+  "devDependencies": {
+    "@types/openui5": "^1.127.0",
+    "typescript": "^5.5.4"
+  }
+}

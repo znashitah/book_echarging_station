@@ -1,0 +1,31 @@
+<mvc:View
+    controllerName="my.app.controller.ChargingStation"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="Charging Stations">
+        <Table items="{chargingStations>/}">
+            <columns>
+                <Column>
+                    <Text text="Station ID" />
+                </Column>
+                <Column>
+                    <Text text="Location" />
+                </Column>
+                <Column>
+                    <Text text="Price" />
+                </Column>
+                <!-- Add more columns as necessary -->
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{chargingStations>STATIONID}" />
+                        <Text text="{chargingStations>LOCATION}" />
+                        <Text text="{chargingStations>PRICE}" />
+                        <!-- Add more fields as necessary -->
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>

@@ -1,0 +1,31 @@
+<mvc:View
+    controllerName="my.app.controller.User"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="Users">
+        <Table items="{users>/}">
+            <columns>
+                <Column>
+                    <Text text="ID" />
+                </Column>
+                <Column>
+                    <Text text="First Name" />
+                </Column>
+                <Column>
+                    <Text text="Last Name" />
+                </Column>
+                <!-- Add more columns as necessary -->
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Text text="{users>USERID}" />
+                        <Text text="{users>FNAME}" />
+                        <Text text="{users>LNAME}" />
+                        <!-- Add more fields as necessary -->
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Page>
+</mvc:View>
