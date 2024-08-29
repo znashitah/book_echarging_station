@@ -3,13 +3,6 @@
     "sap.app": {
         "id": "ui5.walkthrough",
         "type": "application",
-        "i18n": {
-            "bundleName": "ui5.walkthrough.i18n.i18n",
-            "supportedLocales": [
-                ""
-            ],
-            "fallbackLocale": ""
-        },
         "title": "{{appTitle}}",
         "description": "{{appDescription}}",
         "applicationVersion": {
@@ -34,15 +27,22 @@
         }
     },
     "sap.ui5": {
+        "dependencies": {
+            "minUI5Version": "1.120",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {}
+            }
+        },
+        "rootView": {
+            "viewName": "ui5.walkthrough.view.App",
+            "type": "XML",
+            "id": "app"
+        },
         "models": {
             "invoice": {
-                "type": "sap.ui.model.json.JSONModel",
-                "uri": "model/localInvoices.json"
-            },
-            "users": {
-                "type": "sap.ui.model.json.JSONModel",
-                "uri": "model/users.json"
+                "dataSource": "invoiceRemote"
             }
-        }    
+        }     
     }
 }
