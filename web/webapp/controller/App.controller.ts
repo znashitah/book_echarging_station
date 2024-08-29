@@ -19,8 +19,5 @@ export default class AppController extends Controller {
         this.getView()?.setModel(dataModel);
     }
 
-    onShowHello(): void {
-        // show a native JavaScript alert
-        MessageToast.show("Hello World");
-     }
-};
+    
+}; 
