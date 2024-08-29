@@ -1,14 +1,36 @@
 <mvc:View
+   controllerName="ui5.walkthrough.controller.InvoiceList"
    xmlns="sap.m"
+   xmlns:core="sap.ui.core"
    xmlns:mvc="sap.ui.core.mvc">
    <List
-      headerText="Invoices"
+      id="invoiceList"
       class="sapUiResponsiveMargin"
       width="auto"
-      items="{users>/Users}" >
+      items="{invoice>/Invoices}" >
+      <headerToolbar>
+         <Toolbar>
+            <Title text="search your invoice"/>
+            <ToolbarSpacer/>
+            <SearchField width="50%" search=".onFilterInvoices"/>
+         </Toolbar>
+      </headerToolbar>
       <items>
          <ObjectListItem
-            title="{users>firstName}, {users>lastName}"/>
+            title="{invoice>Quantity} x {invoice>ProductName}"
+            number="{
+               parts: [
+                  'invoice>ExtendedPrice',
+                  'view>/currency'
+               ],
+               type: 'sap.ui.model.type.Currency',
+               formatOptions: {
+                  showMeasure: false
+               }
+            }"
+            numberUnit="{view>/currency}"
+            numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }">
+         </ObjectListItem>
       </items>
    </List>
 </mvc:View>

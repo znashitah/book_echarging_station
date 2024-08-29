@@ -1,10 +1,10 @@
-specVersion: "4.0"
+specVersion: '3.0'
 metadata:
-  name: de.hfu.svc.echarger
+  name: "ui5.walkthrough"
 type: application
 framework:
   name: OpenUI5
-  version: "1.127.0"
+  version: "1.120.1"
   libraries:
     - name: sap.m
     - name: sap.ui.core
@@ -13,11 +13,16 @@ builder:
   customTasks:
   - name: ui5-tooling-transpile-task
     afterTask: replaceVersion
+    configuration: 
+      transformAsyncToPromise: true
 server:
   customMiddleware:
   - name: ui5-tooling-transpile-middleware
     afterMiddleware: compression
-  - name: ui5-middleware-serveframework
+    configuration: 
+      transformAsyncToPromise: true  
+  - name: ui5-middleware-simpleproxy
     afterMiddleware: compression
-  - name: ui5-middleware-livereload
-    afterMiddleware: compression
+    mountPath: /V2
+    configuration:
+      baseUri: "https://services.odata.org"
