@@ -1,11 +1,39 @@
 {
     "_version": "1.60.0",
     "sap.app": {
-        "id": "ui5.de.hfu",
+        "id": "ui5.walkthrough",
         "type": "application",
-        "title": "Green Energy Project",
+        "i18n": {
+            "bundleName": "ui5.walkthrough.i18n.i18n",
+            "supportedLocales": [
+                ""
+            ],
+            "fallbackLocale": ""
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
         "applicationVersion": {
             "version": "1.0.0"
         }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "models": {
+            "invoice": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/localInvoices.json"
+            },
+            "users": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/users.json"
+            }
+        }    
     }
 }

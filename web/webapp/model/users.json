@@ -1,0 +1,24 @@
+{
+  "Users": [
+	{
+  "userId": 1,
+  "firstName": "Sleepy",
+  "lastName": "Jin",
+  "email": "jin.furtwangen@example.com",
+  "type": "OWNER",
+  "password": "newowner",
+  "gender": "MEN",
+  "dob": 19880101
+},
+{
+  "userId": 2,
+  "firstName": "Awaken",
+  "lastName": "Jin",
+  "email": "jin.furtwangen@example.com",
+  "type": "OWNER",
+  "password": "newowner",
+  "gender": "MEN",
+  "dob": 19880101
+}
+  ]
+}
