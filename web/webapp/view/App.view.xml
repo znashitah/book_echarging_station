@@ -1,13 +1,13 @@
 <mvc:View
-    controllerName="my.app.controller.App"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <App>
-        <Page title="Main Page">
-            <content>
-                <Button text="Users" press="onNavToUsers" />
-                <Button text="Charging Stations" press="onNavToChargingStations" />
-            </content>
-        </Page>
-    </App>
+   controllerName="ui5.walkthrough.controller.App"
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc">
+   <Button
+      text="Say Hello"
+      press=".onShowHello"/>
+   <Input
+      value="{/recipient/lname}"
+      description="Hello {/recipient/lname}"
+      valueLiveUpdate="true"
+      width="60%"/>  
 </mvc:View>

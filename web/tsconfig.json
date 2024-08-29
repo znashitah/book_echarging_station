@@ -1,17 +1,17 @@
 {
-  "compilerOptions": {
-    "target": "ES5",
-    "module": "ES6",
-    "strict": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": true,
-    "outDir": "dist",
-    "rootDir": "webapp",
-    "baseUrl": "./webapp",
-    "types": ["openui5"]
-  },
-  "include": [
-    "webapp/**/*.ts"
-  ]
-}
+    "compilerOptions": {
+      "target": "es2022",
+      "module": "es2022",
+      "moduleResolution": "node",
+      "skipLibCheck": true,
+      "allowJs": true,
+      "strict": true,
+      "strictPropertyInitialization": false,
+      "rootDir": "webapp",
+      "baseUrl": "./",
+      "paths": {
+        "ui5/walkthrough/*": ["webapp/*"]
+      }
+    },
+    "include": ["webapp/**/*"]
+  }

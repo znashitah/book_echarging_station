@@ -1,72 +1,11 @@
 {
+    "_version": "1.60.0",
     "sap.app": {
-        "id": "my.app",
+        "id": "ui5.de.hfu",
         "type": "application",
-        "i18n": "i18n/i18n.properties",
-        "title": "My Application"
-    },
-    "sap.ui5": {
-        "rootView": {
-            "viewName": "my.app.view.App",
-            "type": "XML",
-            "async": true
-        },
-        "dependencies": {
-            "minUI5Version": "1.60.1",
-            "libs": {
-                "sap.m": {}
-            }
-        },
-        "models": {
-            "i18n": {
-                "type": "sap.ui.model.resource.ResourceModel",
-                "settings": {
-                    "bundleName": "my.app.i18n.i18n"
-                }
-            }
-        },
-        "routing": {
-            "config": {
-                "routerClass": "sap.m.routing.Router",
-                "viewType": "XML",
-                "viewPath": "my.app.view",
-                "controlId": "app",
-                "controlAggregation": "pages",
-                "bypassed": {
-                    "target": "notFound"
-                }
-            },
-            "routes": [
-                {
-                    "pattern": "",
-                    "name": "home",
-                    "target": "home"
-                },
-                {
-                    "pattern": "users",
-                    "name": "users",
-                    "target": "user"
-                },
-                {
-                    "pattern": "chargingStations",
-                    "name": "chargingStations",
-                    "target": "chargingStation"
-                }
-            ],
-            "targets": {
-                "home": {
-                    "viewName": "App",
-                    "viewLevel": 1
-                },
-                "user": {
-                    "viewName": "User",
-                    "viewLevel": 2
-                },
-                "chargingStation": {
-                    "viewName": "ChargingStation",
-                    "viewLevel": 2
-                }
-            }
+        "title": "Green Energy Project",
+        "applicationVersion": {
+            "version": "1.0.0"
         }
     }
 }
