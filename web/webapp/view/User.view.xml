@@ -1,0 +1,32 @@
+<mvc:View
+    controllerName="ui5.walkthrough.controller.User"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+            <VBox>
+                <Text text="User ID:" />
+                <Text text="{aUserModel>/userId}" />
+
+                <Text text="First Name:" />
+                <Text text="{aUserModel>/firstName}" />
+
+                <Text text="Last Name:" />
+                <Text text="{aUserModel>/lastName}" />
+
+                <Text text="Email:" />
+                <Text text="{aUserModel>/email}" />
+
+                <Text text="Type:" />
+                <Text text="{aUserModel>/type}" />
+
+                <Text text="Password:" />
+                <Text text="{aUserModel>/password}" />
+
+                <Text text="Gender:" />
+                <Text text="{aUserModel>/gender}" />
+
+                <Text text="Date of Birth:" />
+                <Text text="{aUserModel>/dob}" />
+            </VBox>
+
+</mvc:View>

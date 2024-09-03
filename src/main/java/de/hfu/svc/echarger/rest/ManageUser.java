@@ -39,6 +39,11 @@ public class ManageUser {
 		return userService.getAllUsers();
 	}
 
+	@GetMapping("/db/{userId}")
+	public User getUserById(@PathVariable Integer userId) {
+		return userService.getUserById(userId);
+	}
+
 	@PostMapping
 	public String addUser(@RequestBody User user) {
 		System.out.println(new Gson().toJson(user));
