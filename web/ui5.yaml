@@ -26,3 +26,8 @@ server:
     mountPath: /V2
     configuration:
       baseUri: "https://services.odata.org"
+  - name: ui5-middleware-simpleproxy
+    afterMiddleware: compression
+    mountPath: /echargerbackend
+    configuration:
+      baseUri: "http://localhost:8080"

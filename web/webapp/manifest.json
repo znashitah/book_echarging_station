@@ -15,7 +15,11 @@
                 "settings": {
                     "odataVersion": "2.0"
                 }
-            }
+            },
+            "userRemote": {
+				"uri": "echargerbackend/users/db/1",
+				"type": "JSON"
+			}
         }
     },
     "sap.ui": {
@@ -42,6 +46,9 @@
         "models": {
             "invoice": {
                 "dataSource": "invoiceRemote"
+            },
+            "aUserModel": {
+                "dataSource": "userRemote"
             }
         }     
     }

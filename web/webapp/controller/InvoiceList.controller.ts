@@ -13,6 +13,11 @@ export default class App extends Controller {
         const viewModel = new JSONModel({
             currency: "EUR"
         });
+        const userModel1 = new JSONModel();
+        userModel1.loadData("echargerbackend/users/db/2");
+        console.log(userModel1);
+        this.getView()?.setModel(userModel1, "userModel");
+        // console.log(userModel1.getData());
         this.getView()?.setModel(viewModel, "view");
     }
 

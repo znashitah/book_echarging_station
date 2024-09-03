@@ -28,7 +28,7 @@
                   showMeasure: false
                }
             }"
-            numberUnit="{view>/currency}"
+            numberUnit="{userModel>/firstName} {userModel>/lastName} {userModel>/email} {userModel>/type}"
             numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }">
          </ObjectListItem>
       </items>
