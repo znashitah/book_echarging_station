@@ -12,8 +12,21 @@ export default class UserController extends Controller {
         
     } 
     onShowHello(): void {
-        // show a native JavaScript alert
-        const recipient = (this.getView()?.getModel('userModel') as JSONModel)?.getProperty("/firstName");
-        MessageToast.show("Hello " + recipient);
+		const chargingstationModel= new JSONModel(); 
+		chargingstationModel.loadData("echargerbackend/chargingstations/db/1");
+		 
+		chargingstationModel.attachRequestCompleted(() => {
+        this.getView()?.setModel(chargingstationModel, "chargingstationModel");
+        
+        // Access the first station's location
+        const firstStationLocation = chargingstationModel.getProperty("/0/location");
+
+        if (firstStationLocation) {
+            // MessageToast.show("Location: " + chargingstationModel.getJSON());
+            MessageToast.show("Location: " + firstStationLocation);
+        } else {
+            MessageToast.show("Location not found");
+        }
+    	});
      }
 }
