@@ -13,8 +13,10 @@
               
                   <content>
 					 <mvc:XMLView viewName="ui5.walkthrough.view.User"/>
+					 <mvc:XMLView viewName="ui5.walkthrough.view.ChargingStation"/>
                      <mvc:XMLView viewName="ui5.walkthrough.view.HelloPanel"/>
-                     <mvc:XMLView viewName="ui5.walkthrough.view.InvoiceList"/>
+                     <!-- <mvc:XMLView viewName="ui5.walkthrough.view.InvoiceList"/>-->
+                     
                   </content>
               
            

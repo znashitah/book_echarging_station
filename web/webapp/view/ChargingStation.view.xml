@@ -1,31 +1,46 @@
 <mvc:View
-    controllerName="my.app.controller.ChargingStation"
+    controllerName="ui5.walkthrough.controller.ChargingStation"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page title="Charging Stations">
-        <Table items="{chargingStations>/}">
-            <columns>
-                <Column>
-                    <Text text="Station ID" />
-                </Column>
-                <Column>
-                    <Text text="Location" />
-                </Column>
-                <Column>
-                    <Text text="Price" />
-                </Column>
-                <!-- Add more columns as necessary -->
-            </columns>
-            <items>
-                <ColumnListItem>
-                    <cells>
-                        <Text text="{chargingStations>STATIONID}" />
-                        <Text text="{chargingStations>LOCATION}" />
-                        <Text text="{chargingStations>PRICE}" />
-                        <!-- Add more fields as necessary -->
-                    </cells>
-                </ColumnListItem>
-            </items>
-        </Table>
-    </Page>
+    xmlns="sap.m"
+    xmlns:semantic="sap.f.semantic">
+    <semantic:SemanticPage
+		id="page"
+		headerPinnable="false"
+		toggleHeaderOnTitleClick="false"
+		showFooter="true"> 
+		<semantic:titleHeading>
+			<Title text="ChargingStations" />
+		</semantic:titleHeading>
+
+		<semantic:headerContent>
+			<IconTabBar
+				id="iconTabBar"
+				select=".onQuickFilter"
+				expandable="false">
+				<items>
+					<IconTabFilter
+						key="all"
+						showAll="true"
+						count="2"
+						text="ChargingStations"/>
+					<IconTabSeparator/>
+					<IconTabFilter
+						key="inStock"
+						icon="sap-icon://message-success"
+						iconColor="Positive"
+						count="1"
+						text="Booked"/>
+					<IconTabFilter
+						key="shortage"
+						icon="sap-icon://message-warning"
+						iconColor="Critical"
+						count="1"
+						text="Available"/>
+					
+				</items>
+			</IconTabBar>
+		</semantic:headerContent>
+	</semantic:SemanticPage>
+
+    
 </mvc:View>
