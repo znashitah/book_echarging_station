@@ -2,31 +2,50 @@
     controllerName="ui5.walkthrough.controller.User"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
+  <Panel
+    headerText="Welcome {userModel>/firstName} {userModel>/lastName} "
+    class="sapUiResponsiveMargin"
+    width="auto" >
+    
+    <VBox>
+      <HBox>
+        <Text text="User ID: " />
+        <Text text="{userModel>/userId}" />
+      </HBox>
 
-            <VBox>
-                <Text text="User ID:" />
-                <Text text="{aUserModel>/userId}" />
+      
 
-                <Text text="First Name:" />
-                <Text text="{aUserModel>/firstName}" />
+      <HBox>
+        <Text text="Email: " />
+        <Text text="{userModel>/email}" />
+      </HBox>
 
-                <Text text="Last Name:" />
-                <Text text="{aUserModel>/lastName}" />
+      <HBox>
+        <Text text="Type: " />
+        <Text text="{userModel>/type}" />
+      </HBox>
 
-                <Text text="Email:" />
-                <Text text="{aUserModel>/email}" />
+      <HBox>
+        <Text text="Password: " />
+        <Text text="{userModel>/password}" />
+      </HBox>
 
-                <Text text="Type:" />
-                <Text text="{aUserModel>/type}" />
+      <HBox>
+        <Text text="Gender: " />
+        <Text text="{userModel>/gender}" />
+      </HBox>
 
-                <Text text="Password:" />
-                <Text text="{aUserModel>/password}" />
-
-                <Text text="Gender:" />
-                <Text text="{aUserModel>/gender}" />
-
-                <Text text="Date of Birth:" />
-                <Text text="{aUserModel>/dob}" />
-            </VBox>
-
+      <HBox>
+        <Text text="Date of Birth: " />
+        <Text text="{userModel>/dob}" />
+      </HBox>
+    </VBox> 
+    <Button
+            id="helloDialogButton"
+            text="My charging stations "
+             icon="sap-icon://world"
+            press=".onShowHello"
+            class="sapUiSmallMarginEnd"/>
+  </Panel>
 </mvc:View>
+
