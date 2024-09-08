@@ -48,6 +48,7 @@
     growingScrollToLoad="true"
     noDataText="No charging station found"
     updateFinished=".onUpdateFinished"
+    selectionChange=".onSelectChargingStation"
     width="auto"
     mode="MultiSelect"
     items="{chargingstationModel>/}">
@@ -80,11 +81,9 @@
 				</content>
 			</IconTabBar>
 		</semantic:headerContent>
-		<semantic:sendEmailAction>
-			<semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
-		</semantic:sendEmailAction>
+		
 		<semantic:positiveAction>
-			<semantic:PositiveAction text="Remove" press=".onUpdateStockObjects"/>
+			<semantic:PositiveAction text="Remove" press=".onRemovechargingstation"/>
 		</semantic:positiveAction>
 		<semantic:negativeAction>
 			<semantic:NegativeAction text="Modify" press=".onUnlistObjects"/>
