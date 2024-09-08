@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog id="addChargingStationDialog" title="Add Charging Station" class="sapUiResponsivePadding--header sapUiResponsivePadding--content sapUiResponsivePadding--footer" stretch="false">
+        <content>
+            <VBox>
+				<Label text="StationId" />
+                <Input id="StationInput"  type="Number"/>
+                <Label text="Location" />
+                <Input id="locationInput" />
+                <Label text="Price" />
+                <Input id="priceInput" type="Number" />
+                <Label text="Contact" />
+                <Input id="contactInput" /> 
+                <Label text="UserId" />
+                <Input id="UserInput" type="Number" />
+            </VBox>
+        </content>
+        <endButton>
+            <Button text="Add" press=".onConfirmAddChargingStation" />
+        </endButton>
+        <beginButton>
+            <Button text="Cancel" press=".onCloseChargingStationDialog" />
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>

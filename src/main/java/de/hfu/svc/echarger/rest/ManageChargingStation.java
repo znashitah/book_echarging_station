@@ -46,6 +46,12 @@ public class ManageChargingStation {
 		return "ChargingStation is created successfully: chargingStationId" + chargingstations.getStationId();
 	}
 
+	@GetMapping("/db/{userId}")
+	public List<ChargingStation> getChargingStationsByUserId(@PathVariable Integer userId) {
+		System.out.println("Got request to get getChargingStationsByUserId");
+		return chargingStationService.getChargingStationByUserId(userId);
+	}
+
 	@DeleteMapping("/{chargingStationId}")
 	public String deleteChargingStation(@PathVariable Integer chargingStationId) {
 		boolean isRemoved = chargingStationService.deleteChargingStation(chargingStationId);

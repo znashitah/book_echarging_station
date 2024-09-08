@@ -28,6 +28,7 @@ public class ChargingStation {
 
 	@ManyToOne
 	@JoinColumn(name = "USER_USERID", referencedColumnName = "USERID")
+	// @JsonIgnore
 	private User user; // Assuming User is another entity class
 
 	// Getters and Setters

@@ -80,15 +80,24 @@
 
 				</content>
 			</IconTabBar>
+			  
 		</semantic:headerContent>
 		
 		<semantic:positiveAction>
 			<semantic:PositiveAction text="Remove" press=".onRemovechargingstation"/>
 		</semantic:positiveAction>
 		<semantic:negativeAction>
-			<semantic:NegativeAction text="Modify" press=".onUnlistObjects"/>
+			<semantic:NegativeAction text="Modify" press=".onAddChargingStation"/>
 		</semantic:negativeAction>
-	</semantic:SemanticPage>
+		
+		<semantic:footerCustomActions>
+        <Button text="Save" press=".onSaveChargingStation" />
+        <Button text="Cancel" press=".onCancelPress" />
+    </semantic:footerCustomActions>
+
+		
+	</semantic:SemanticPage> 
+
 
     
 </mvc:View>
