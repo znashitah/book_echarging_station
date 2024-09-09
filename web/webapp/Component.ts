@@ -28,7 +28,7 @@ export default class Component extends UIComponent {
     createContent(): Control | Promise<Control | null> | null {
         return XMLView.create({
             // "viewName": "ui5.walkthrough.view.AppOwner",
-            "viewName": "ui5.walkthrough.view.AppCustomer",
+            "viewName": "ui5.walkthrough.view.LandingApp",
             "id": "app"
         });
     };

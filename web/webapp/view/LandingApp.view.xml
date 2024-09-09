@@ -1,0 +1,43 @@
+<mvc:View
+    controllerName="ui5.walkthrough.controller.LandingApp"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:form="sap.ui.layout.form"
+    displayBlock="true">
+    <App>
+        <pages>
+            <Page title="User Type Selection">
+                <content>
+                    <form:SimpleForm
+						maxContainerCols="2"
+						editable="false"
+						layout="ResponsiveGridLayout"
+						labelSpanL="3"
+						labelSpanM="3"
+						emptySpanL="4"
+						emptySpanM="4"
+						columnsL="1"
+						columnsM="1"
+						justifyContent="Center"
+						alignItems="Center"
+                        class="sapUiResponsiveMargin"
+                        width="50%">
+						<form:content>
+						<Label text="User ID" />
+                        <Input id="userIdInput" placeholder="Enter your User ID" />
+
+                        <Label text="Are you an Owner?" />
+                        <SegmentedButton>
+                            <Button text="Yes" type="Accept" id="ownerButton" />
+                            <Button text="No" type="Reject" id="customerButton" />
+                        </SegmentedButton>
+
+                        <!-- Submit Button -->
+                        <Button text="Submit" type="Emphasized" press=".onSubmit" />
+						</form:content>
+					</form:SimpleForm>
+                </content>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

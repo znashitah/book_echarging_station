@@ -41,7 +41,7 @@
             }
         },
         "rootView": {
-            "viewName": "ui5.walkthrough.view.AppCustomer",
+            "viewName": "ui5.walkthrough.view.LandingApp",
             "type": "XML",
             "id": "app"
         },
