@@ -1,0 +1,98 @@
+<mvc:View
+    controllerName="ui5.walkthrough.controller.BookableChargingStation"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:semantic="sap.f.semantic">
+    <semantic:SemanticPage
+		id="page"
+		headerPinnable="false"
+		toggleHeaderOnTitleClick="false"
+		showFooter="true"> 
+		<semantic:titleHeading>
+			<Title text="ChargingStations" />
+		</semantic:titleHeading>
+
+		<semantic:headerContent>
+			<IconTabBar
+				id="iconTabBar"
+				select=".onQuickFilter"
+				expandable="false">
+				<items>
+					<IconTabFilter
+						key="all"
+						showAll="true"
+						count="2"
+						text="{chargingstationModel>/0/location}"/>
+					<IconTabSeparator/>
+					<IconTabFilter
+						key="inStock"
+						icon="sap-icon://message-success"
+						iconColor="Positive"
+						count="1"
+						text="Booked"/>
+					<IconTabFilter
+						key="shortage"
+						icon="sap-icon://message-warning"
+						iconColor="Critical"
+						count="1"
+						text="Available"/>
+					
+				</items>
+				
+				
+				
+				<content>
+					<Table
+    id="table"
+    growing="true"
+    growingScrollToLoad="true"
+    noDataText="No charging station found"
+    updateFinished=".onUpdateFinished"
+    selectionChange=".onSelectChargingStation"
+    width="auto"
+    mode="MultiSelect"
+    items="{chargingstationModel>/}">
+    <columns>
+        <Column>
+            <Text text="Station ID" />
+        </Column>
+        <Column>
+            <Text text="Location" />
+        </Column>
+        <Column>
+            <Text text="Price" />
+        </Column>
+        <Column>
+            <Text text="Contact" />
+        </Column>
+    </columns>
+    <items>
+        <ColumnListItem>
+            <cells>
+                <ObjectIdentifier title="{chargingstationModel>stationId}" />
+                <Text text="{chargingstationModel>location}" />
+                <Text text="{chargingstationModel>price}" />
+                <Text text="{chargingstationModel>contact}" />
+            </cells>
+        </ColumnListItem>
+    </items>
+</Table>
+
+				</content>
+			</IconTabBar>
+			  
+		</semantic:headerContent>
+		
+		<semantic:positiveAction>
+			<semantic:PositiveAction text="Book" press=".onBookchargingstation"/>
+		</semantic:positiveAction>
+		
+		
+		
+
+		
+	</semantic:SemanticPage> 
+
+
+    
+</mvc:View>
