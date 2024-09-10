@@ -103,6 +103,34 @@
         <rollback>
             <dropTable tableName="CUSTOMER"/>
         </rollback>
-    </changeSet>
+    </changeSet> 
+    <!-- ChangeSet for creating SCHEDULE table -->
+   <changeSet id="5-create-schedule-table" author="yourname">
+    <createTable tableName="SCHEDULE">
+        <column name="SCHEDULEID" type="INT" autoIncrement="true">
+            <constraints primaryKey="true" nullable="false"/>
+        </column>
+        <column name="STARTTIME" type="TIME"/>
+        <column name="ENDTIME" type="TIME"/>
+        <column name="DAY" type="INT"/>
+        <column name="CHARGINGSTATION_STATIONID" type="INT">
+            <constraints nullable="false"/>
+        </column>
+    </createTable>
+
+    <addForeignKeyConstraint 
+        baseTableName="SCHEDULE" 
+        baseColumnNames="CHARGINGSTATION_STATIONID" 
+        constraintName="fk_SCHEDULE_CHARGINGSTATION"
+        referencedTableName="CHARGINGSTATION" 
+        referencedColumnNames="STATIONID"
+        onDelete="NO ACTION" 
+        onUpdate="NO ACTION"/>
+
+    <rollback>
+        <dropTable tableName="SCHEDULE"/>
+    </rollback>
+</changeSet>
+
 
 </databaseChangeLog>
