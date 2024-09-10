@@ -4,6 +4,7 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:form="sap.ui.layout.form"
     displayBlock="true">
+    <Shell>
     <App>
         <pages>
             <Page title="User Type Selection">
@@ -40,4 +41,5 @@
             </Page>
         </pages>
     </App>
+    </Shell>
 </mvc:View>

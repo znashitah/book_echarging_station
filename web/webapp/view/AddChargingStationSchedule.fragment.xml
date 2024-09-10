@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog id="addScheduleDialog" title="Add Schedule" class="sapUiResponsivePadding--header sapUiResponsivePadding--content sapUiResponsivePadding--footer" stretch="false">
+        <content>
+            <VBox>
+                <Label text="Start Time" />
+                <TimePicker id="startTimePicker" valueFormat="HH:mm:ss" displayFormat="HH:mm:ss" />
+
+                <Label text="End Time" />
+                <TimePicker id="endTimePicker" valueFormat="HH:mm:ss" displayFormat="HH:mm:ss" />
+
+                <Label text="Day (1-7)" />
+                <Input id="dayPicker" type="Number" placeholder="Enter day (1 for Monday, 7 for Sunday)" max="7" min="1"/>
+            </VBox>
+        </content>
+        <endButton>
+            <Button text="Add" press=".onConfirmAddSchedule" />
+        </endButton>
+        <beginButton>
+            <Button text="Cancel" press=".onCloseScheduleDialog" />
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>

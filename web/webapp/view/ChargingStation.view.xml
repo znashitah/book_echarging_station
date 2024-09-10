@@ -86,12 +86,13 @@
 		<semantic:positiveAction>
 			<semantic:PositiveAction text="Remove" press=".onRemovechargingstation"/>
 		</semantic:positiveAction>
-		<semantic:negativeAction>
+		<!--<semantic:negativeAction>
 			<semantic:NegativeAction text="Modify" press=".onAddChargingStation"/>
-		</semantic:negativeAction>
+		</semantic:negativeAction>-->
 		
 		<semantic:footerCustomActions>
-        <Button text="Save" press=".onSaveChargingStation" />
+        <Button text="Add Charging Station" press=".onSaveChargingStation" />
+        <Button text="Add Schedule" press=".onAddScheduleDialogPress" />
         <Button text="Cancel" press=".onCancelPress" />
     </semantic:footerCustomActions>
 

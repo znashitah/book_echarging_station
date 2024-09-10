@@ -37,13 +37,7 @@
                 "sap.ui.core": {},
                 "sap.m": {},
                 "sap.f": {}
-                
             }
-        },
-        "rootView": {
-            "viewName": "ui5.walkthrough.view.LandingApp",
-            "type": "XML",
-            "id": "app"
         },
         "models": {
             "invoice": {
@@ -52,6 +46,58 @@
             "aUserModel": {
                 "dataSource": "userRemote"
             }
-        }     
+        },
+        "rootView": {
+            "viewName": "ui5.walkthrough.view.AppCustomer",
+            "type": "XML",
+            "id": "app"
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "ui5.walkthrough.view",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "bypassed": {
+                    "target": "notFound"
+                }
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "Landing",
+                    "target": "landingApp"
+                },
+                {
+                    "pattern": "customer",
+                    "name": "Customer",
+                    "target": "appCustomer"
+                },
+                {
+                    "pattern": "owner",
+                    "name": "Owner",
+                    "target": "appOwner"
+                }
+            ],
+            "targets": {
+                "landingApp": {
+                    "viewName": "LandingApp",
+                    "viewLevel": 1
+                },
+                "appCustomer": {
+                    "viewName": "AppCustomer",
+                    "viewLevel": 2
+                },
+                "appOwner": {
+                    "viewName": "AppOwner",
+                    "viewLevel": 2
+                },
+                "notFound": {
+                    "viewName": "NotFound",
+                    "viewLevel": 3
+                }
+            }
+        }
     }
 }

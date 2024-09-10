@@ -22,13 +22,14 @@ export default class Component extends UIComponent {
         };
         const dataModel = new JSONModel(data);
         this.setModel(dataModel);
+        this.getRouter().initialize();
 
         
     };
     createContent(): Control | Promise<Control | null> | null {
         return XMLView.create({
-            // "viewName": "ui5.walkthrough.view.AppOwner",
-            "viewName": "ui5.walkthrough.view.LandingApp",
+            "viewName": "ui5.walkthrough.view.AppOwner",
+            // "viewName": "ui5.walkthrough.view.LandingApp",
             "id": "app"
         });
     };
