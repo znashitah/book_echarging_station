@@ -18,12 +18,12 @@ export default class LandingAppController extends Controller {
         // Get user type selection (Customer/Owner)
         const oRadioButtonGroup = this.byId("userTypeRadioGroup") as RadioButtonGroup;
         const selectedIndex = oRadioButtonGroup.getSelectedIndex();
-        let userType: string;
+        let selectedUserType: string;
         
         if (selectedIndex === 0) {
-            userType = "Customer";
+            selectedUserType = "customer";
         } else if (selectedIndex === 1) {
-            userType = "Owner";
+            selectedUserType = "owner";
         } else {
             MessageToast.show("Please select a user type.");
             return;
@@ -53,14 +53,19 @@ export default class LandingAppController extends Controller {
             }
         })
         .then(userData => {
-            // Assuming the backend returns the user data
             MessageToast.show(`Welcome, ${userData.name}`);
 
-            // Navigate to the appropriate view based on user type
-            if (userType === "Customer") {
-                oRouter.navTo("AppCustomer");
-            } else if (userType === "Owner") {
-                oRouter.navTo("AppOwner");
+            // Compare the user type returned from the backend with the selected type
+            if (userData.type.toLowerCase() === selectedUserType) {
+                // Navigate to the appropriate view based on user type
+                if (selectedUserType === "customer") {
+                    oRouter.navTo("AppCustomer");
+                } else if (selectedUserType === "owner") {
+                    oRouter.navTo("AppOwner");
+                }
+            } else {
+                // Display an error message if types don't match
+                MessageToast.show("Selected user type does not match the account type...");
             }
         })
         .catch(error => {
