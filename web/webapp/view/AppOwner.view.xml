@@ -5,10 +5,8 @@
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc"
    displayBlock="true">
-   <Shell>
-   <App>
-      <pages>
-         <Page title="Green Energy Project">
+
+         <Page title="AppOwner">
            
               
                   <content>
@@ -21,7 +19,5 @@
               
            
          </Page>
-      </pages>
-   </App>
-   </Shell>
+
 </mvc:View>

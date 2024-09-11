@@ -2,25 +2,27 @@ import Controller from "sap/ui/core/mvc/Controller";
 import JSONModel from "sap/ui/model/json/JSONModel";
 import MessageToast from "sap/m/MessageToast";
 import Input from "sap/m/Input";
-import SegmentedButton from "sap/m/SegmentedButton";
+import RadioButtonGroup from "sap/m/RadioButtonGroup";
 import UIComponent from "sap/ui/core/UIComponent";
 
 export default class LandingAppController extends Controller {
     public onSubmit(): void {
         
         
-        // Get user ID input
-        const userIdInput = this.byId("userIdInput") as Input;
-        const userId = userIdInput.getValue();
-		
-        // Get user type from SegmentedButton
-        
-        const userTypeToggle = this.byId("userTypeToggle") as SegmentedButton;
-        
-        
+       
         const oRouter = UIComponent.getRouterFor(this);
-        oRouter.navTo("AppOwner");
-        MessageToast.show(userId);
+        const oRadioButtonGroup = this.byId("userTypeRadioGroup") as RadioButtonGroup;
+        const selectedIndex = oRadioButtonGroup.getSelectedIndex();
+        MessageToast.show("hello");
+        if (selectedIndex === 0) {
+			MessageToast.show("hello1");
+            // Customer selected
+            oRouter.navTo("AppCustomer");
+        } else if (selectedIndex === 1) {
+			MessageToast.show("hello2");
+            // Owner selected
+            oRouter.navTo("AppOwner");
+        }
         // const selectedKey = userTypeToggle.getSelectedKey(); // Use getSelectedKey() for a stable value
 
 

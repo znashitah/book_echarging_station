@@ -3,43 +3,57 @@
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:form="sap.ui.layout.form"
-    displayBlock="true">
-    <Shell>
-    <App>
-        <pages>
-            <Page title="User Type Selection">
-                <content>
-                    <form:SimpleForm
-						maxContainerCols="2"
-						editable="false"
-						layout="ResponsiveGridLayout"
-						labelSpanL="3"
-						labelSpanM="3"
-						emptySpanL="4"
-						emptySpanM="4"
-						columnsL="1"
-						columnsM="1"
-						justifyContent="Center"
-						alignItems="Center"
-                        class="sapUiResponsiveMargin"
-                        width="50%">
-						<form:content>
-						<Label text="User ID" />
-                        <Input id="userIdInput" placeholder="Enter your User ID" />
-
-                        <Label text="Are you an Owner?" />
-                        <SegmentedButton>
-                            <Button text="Yes" type="Accept" id="ownerButton" />
-                            <Button text="No" type="Reject" id="customerButton" />
-                        </SegmentedButton>
-
-                        <!-- Submit Button -->
-                        <Button text="Submit" type="Emphasized" press=".onSubmit" />
-						</form:content>
-					</form:SimpleForm>
-                </content>
-            </Page>
-        </pages>
-    </App>
-    </Shell>
+    displayBlock="true"
+    height = "100%">
+    
+    <App id="app">
+      <Shell>
+         <VBox
+            justifyContent="Center"
+            alignItems="Center"
+            width="100%"
+            height="100%">
+            
+            <items>
+               <Title text="Charge your e-car at ease" level="H1"/>
+               <Text text="Login to your account" textAlign="Center" design="Bold" width="300px" class="sapUiSmallMargin"/>
+               
+               <Input
+                  id="userIdInput"
+                  placeholder="Enter User ID"
+                  width="300px"/>
+               <Input
+                  id="passwordInput"
+                  placeholder="Enter Password"
+                  width="300px"/>
+               
+               <Text
+                  text="Are you a customer or owner?"
+                  textAlign="Center"
+                  design="Bold"
+                  width="300px"
+                  class="sapUiSmallMargin"/>
+               
+               <RadioButtonGroup id="userTypeRadioGroup" columns="2">
+                  <buttons>
+                     <RadioButton text="Customer"/>
+                     <RadioButton text="Owner"/>
+                  </buttons>
+               </RadioButtonGroup>
+               <!-- <SegmentedButton id="userTypeSegmentedButton" width="300px">
+                  <buttons>
+                     <Button key="customer" text="Customer"/>
+                     <Button key="owner" text="Owner"/>
+                  </buttons>
+               </SegmentedButton> -->
+               
+               <Button
+                  text="Submit"
+                  press=".onSubmit"
+                  width="300px"/>
+            </items>
+            
+         </VBox>
+      </Shell>
+   </App>
 </mvc:View>

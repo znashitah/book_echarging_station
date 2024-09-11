@@ -48,7 +48,7 @@
             }
         },
         "rootView": {
-            "viewName": "ui5.walkthrough.view.AppCustomer",
+            "viewName": "ui5.walkthrough.view.LandingApp",
             "type": "XML",
             "id": "app"
         },
@@ -59,44 +59,40 @@
                 "viewPath": "ui5.walkthrough.view",
                 "controlId": "app",
                 "controlAggregation": "pages",
-                "bypassed": {
-                    "target": "notFound"
-                }
+                "async": true
+                
             },
             "routes": [
                 {
                     "pattern": "",
-                    "name": "Landing",
-                    "target": "landingApp"
+                    "name": "landingapp",
+                    "target": "landingapp"
                 },
                 {
-                    "pattern": "customer",
-                    "name": "Customer",
-                    "target": "appCustomer"
+                    "pattern": "appcustomer",
+                    "name": "AppCustomer",
+                    "target": "appcustomer"
                 },
                 {
-                    "pattern": "owner",
-                    "name": "Owner",
-                    "target": "appOwner"
+                    "pattern": "appowner",
+                    "name": "AppOwner",
+                    "target": "appowner"
                 }
             ],
             "targets": {
-                "landingApp": {
-                    "viewName": "LandingApp",
-                    "viewLevel": 1
+                "landingapp": {
+                    "viewName": "LandingApp"
+                    
                 },
-                "appCustomer": {
-                    "viewName": "AppCustomer",
-                    "viewLevel": 2
+                "appcustomer": {
+                    "viewName": "AppCustomer"
+                    
                 },
-                "appOwner": {
-                    "viewName": "AppOwner",
-                    "viewLevel": 2
-                },
-                "notFound": {
-                    "viewName": "NotFound",
-                    "viewLevel": 3
+                "appowner": {
+                    "viewName": "AppOwner"
+                    
                 }
+               
             }
         }
     }

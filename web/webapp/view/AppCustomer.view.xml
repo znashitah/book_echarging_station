@@ -3,12 +3,9 @@
 <mvc:View
    controllerName="ui5.walkthrough.controller.AppCustomer"
    xmlns="sap.m"
-   xmlns:mvc="sap.ui.core.mvc"
-   displayBlock="true">
-   <Shell>
-   <App>
-      <pages>
-         <Page title="Green Energy Project">
+   xmlns:mvc="sap.ui.core.mvc">
+
+         <Page title="AppCustomer">
            
               
                   <content>
@@ -21,7 +18,5 @@
               
            
          </Page>
-      </pages>
-   </App>
-   </Shell>
+
 </mvc:View>
