@@ -60,4 +60,17 @@ public class UserService {
 		}
 	}
 
+	public User loginUser(String email, String password) {
+		Optional<User> userOpt = userRepository.findByEmail(email);
+		if (userOpt.isPresent()) {
+			User user = userOpt.get();
+			// Assuming password is stored in plain text (you should hash it for security
+			// reasons)
+			if (user.getPassword().equals(password)) {
+				return user;
+			}
+		}
+		return null; // Return null if login fails
+	}
+
 }

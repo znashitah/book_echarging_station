@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 
+import de.hfu.svc.echarger.dto.UserDTO;
 import de.hfu.svc.echarger.entity.User;
 import de.hfu.svc.echarger.service.UserService;
 
@@ -58,6 +59,16 @@ public class ManageUser {
 			return "Error: User not found with userId " + userId;
 		}
 		return "User deleted successfully: userId " + userId;
+	}
+
+	@PostMapping("/login")
+	public User loginUser(@RequestBody UserDTO userDTO) {
+		User user = userService.loginUser(userDTO.getEmail(), userDTO.getPassword());
+		if (user != null) {
+			return user;
+		} else {
+			throw new RuntimeException("Invalid email or password");
+		}
 	}
 
 }

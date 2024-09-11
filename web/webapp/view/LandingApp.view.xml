@@ -20,7 +20,7 @@
                
                <Input
                   id="userIdInput"
-                  placeholder="Enter User ID"
+                  placeholder="Enter Email Address"
                   width="300px"/>
                <Input
                   id="passwordInput"
