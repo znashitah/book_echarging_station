@@ -10,8 +10,8 @@
                 <Input id="priceInput" type="Number" />
                 <Label text="Contact" />
                 <Input id="contactInput" /> 
-                <Label text="UserId" />
-                <Input id="UserInput" type="Number" />
+                <!--<Label text="UserId" />
+                <Input id="UserInput" type="Number" />-->
             </VBox>
         </content>
         <endButton>

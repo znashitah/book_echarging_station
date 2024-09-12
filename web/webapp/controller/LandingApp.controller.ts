@@ -85,8 +85,13 @@ export default class LandingAppController extends Controller {
 				}
 			})
 			.then(userData => {
-				MessageToast.show(`Welcome, ${userData.name}`);
+				MessageToast.show(`Welcome, ${userData.firstName}`);
 
+				// Create a new JSONModel to store the user data globally
+            	const oUserModel = new JSONModel(userData);
+            	// Set the model to the core for global use
+            	sap.ui.getCore().setModel(oUserModel, "loggedInUserModel");
+            	
 				// Compare the user type returned from the backend with the selected type
 				if (userData.type.toLowerCase() === selectedUserType) {
 					// Navigate to the appropriate view based on user type

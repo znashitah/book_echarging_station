@@ -4,14 +4,19 @@ import JSONModel from "sap/ui/model/json/JSONModel";
 
 export default class UserController extends Controller {
     public onInit(): void {
-		const userModel1 = new JSONModel();
+		/*const userModel1 = new JSONModel();
         userModel1.loadData("echargerbackend/users/db/6");
         console.log(userModel1);
-        this.getView()?.setModel(userModel1, "userModel");
+        this.getView()?.setModel(userModel1, "userModel");*/
+        // Get the logged-in user model from the core
+        const loggedInUserModel = sap.ui.getCore().getModel("loggedInUserModel");
+
+        // Set the model to the current view
+        this.getView()?.setModel(loggedInUserModel, "loggedInUserModel");
 
         
     } 
-    onShowHello(): void {
+    /*onShowHello(): void {
 		const chargingstationModel= new JSONModel(); 
 		chargingstationModel.loadData("echargerbackend/chargingstations/db/6");
 		 
@@ -28,5 +33,5 @@ export default class UserController extends Controller {
             MessageToast.show("Location not found");
         }
     	});
-     }
+     }*/
 }

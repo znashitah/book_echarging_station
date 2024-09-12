@@ -4,37 +4,33 @@
     xmlns="sap.m"
     xmlns:form="sap.ui.layout.form">
   <Panel
-    headerText="Welcome {userModel>/firstName} {userModel>/lastName} "
+    headerText="Welcome {loggedInUserModel>/firstName} {loggedInUserModel>/lastName} "
     class="sapUiResponsiveMargin"
     width="auto" > 
     <content>
-					<form:SimpleForm
-						maxContainerCols="2"
-						editable="false"
-						layout="ResponsiveGridLayout"
-						labelSpanL="3"
-						labelSpanM="3"
-						emptySpanL="4"
-						emptySpanM="4"
-						columnsL="1"
-						columnsM="1">
-						<form:content>
-							<Label text="User ID:"/>
-							<Text text="{userModel>/userId}"/>
-							<Label text="Email:"/>
-							<Text text="{userModel>/email}"/>
-							<Label text="Type:"/>
-							<Text text="{userModel>/type}"/>
-							<Label text="Gender:"/>
-							<Text text="{userModel>/gender}"/>
-							<Label text="Date of Birth:"/>
-							<Text text="{userModel>/dob}"/>
-						</form:content>
-					</form:SimpleForm>
-				</content>
-    
-    
-  
+        <form:SimpleForm
+            maxContainerCols="2"
+            editable="false"
+            layout="ResponsiveGridLayout"
+            labelSpanL="3"
+            labelSpanM="3"
+            emptySpanL="4"
+            emptySpanM="4"
+            columnsL="1"
+            columnsM="1">
+            <form:content>
+                <Label text="User ID"/>
+                <Text text="{loggedInUserModel>/userId}"/>
+                <Label text="Email"/>
+                <Text text="{loggedInUserModel>/email}"/>
+                <Label text="Type"/>
+                <Text text="{loggedInUserModel>/type}"/>
+                <Label text="Gender"/>
+                <Text text="{loggedInUserModel>/gender}"/>
+                <Label text="Date of Birth"/>
+                <Text text="{loggedInUserModel>/dob}"/>
+            </form:content>
+        </form:SimpleForm>
+    </content>
   </Panel>
 </mvc:View>
-

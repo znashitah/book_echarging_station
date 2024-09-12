@@ -13,9 +13,12 @@ export default class ChargingStationController extends Controller {
 	dialog: Dialog;
 
 	public onInit(): void {
+		const loggedInUserModel = sap.ui.getCore().getModel("loggedInUserModel");
+		const loggedInUserId = loggedInUserModel.getProperty("/userId");
+		MessageToast.show(loggedInUserId);
 		const chargingstationModel = new JSONModel();
-		chargingstationModel.loadData("echargerbackend/chargingstations/db/6");
-		console.log(chargingstationModel);
+		chargingstationModel.loadData("echargerbackend/chargingstations/db/" + loggedInUserId);
+		// console.log(chargingstationModel);
 		this.getView()?.setModel(chargingstationModel, "chargingstationModel");
 
 	}
@@ -77,7 +80,9 @@ export default class ChargingStationController extends Controller {
 		const location = (this.byId("locationInput") as Input)?.getValue();
 		const price = parseFloat((this.byId("priceInput") as Input)?.getValue());
 		const contact = (this.byId("contactInput") as Input)?.getValue();
-		const userId = (this.byId("UserInput") as Input)?.getValue();
+		// const userId = (this.byId("UserInput") as Input)?.getValue();
+		const loggedInUserModel = sap.ui.getCore().getModel("loggedInUserModel");
+		const loggedInUserId = loggedInUserModel.getProperty("/userId");
 
 		// Prepare the data in the correct format for the POST request
 		const newChargingStation = {
@@ -86,7 +91,7 @@ export default class ChargingStationController extends Controller {
 			price: price,
 			contact: contact,
 			user: {
-				userId: parseInt(userId)
+				userId: parseInt(loggedInUserId)
 			}
 		};
 
