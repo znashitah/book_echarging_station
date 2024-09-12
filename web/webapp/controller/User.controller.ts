@@ -5,7 +5,7 @@ import JSONModel from "sap/ui/model/json/JSONModel";
 export default class UserController extends Controller {
     public onInit(): void {
 		const userModel1 = new JSONModel();
-        userModel1.loadData("echargerbackend/users/db/1");
+        userModel1.loadData("echargerbackend/users/db/6");
         console.log(userModel1);
         this.getView()?.setModel(userModel1, "userModel");
 
@@ -13,7 +13,7 @@ export default class UserController extends Controller {
     } 
     onShowHello(): void {
 		const chargingstationModel= new JSONModel(); 
-		chargingstationModel.loadData("echargerbackend/chargingstations/db/1");
+		chargingstationModel.loadData("echargerbackend/chargingstations/db/6");
 		 
 		chargingstationModel.attachRequestCompleted(() => {
         this.getView()?.setModel(chargingstationModel, "chargingstationModel");

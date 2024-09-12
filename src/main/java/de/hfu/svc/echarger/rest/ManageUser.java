@@ -46,10 +46,10 @@ public class ManageUser {
 	}
 
 	@PostMapping
-	public String addUser(@RequestBody User user) {
+	public User addUser(@RequestBody User user) {
 		System.out.println(new Gson().toJson(user));
 		userService.addUser(user);
-		return "User created successfully: userId" + user.getUserId();
+		return user;
 	}
 
 	@DeleteMapping("/{userId}")

@@ -1,23 +1,26 @@
 package de.hfu.svc.echarger.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "USER", schema = "APP_DB2")
+@Table(name = "USER")
 public class User implements Serializable {
 
 	@Id
-	// @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "USERID", nullable = false)
+	@Column(name = "USERID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-increment the userId
 	private Integer userId;
 
 	@Column(name = "FNAME", length = 45)
@@ -41,15 +44,13 @@ public class User implements Serializable {
 	private Gender gender;
 
 	@Column(name = "DOB")
-	private Integer dob;
+	private Date dob; // Changed to Date
 
 	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
 	private Customer customer;
 
 	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
 	private Owner owner;
-
-	// Getters and Setters
 
 	// Getters and Setters
 
@@ -109,11 +110,11 @@ public class User implements Serializable {
 		this.gender = gender;
 	}
 
-	public Integer getDob() {
+	public Date getDob() {
 		return dob;
 	}
 
-	public void setDob(Integer dob) {
+	public void setDob(Date dob) {
 		this.dob = dob;
 	}
 
@@ -124,6 +125,6 @@ public class User implements Serializable {
 	}
 
 	public enum Gender {
-		FEMALE, MEN
+		Male, Female
 	}
 }

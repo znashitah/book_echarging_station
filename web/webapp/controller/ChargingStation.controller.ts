@@ -14,7 +14,7 @@ export default class ChargingStationController extends Controller {
 
 	public onInit(): void {
 		const chargingstationModel = new JSONModel();
-		chargingstationModel.loadData("echargerbackend/chargingstations/db/1");
+		chargingstationModel.loadData("echargerbackend/chargingstations/db/6");
 		console.log(chargingstationModel);
 		this.getView()?.setModel(chargingstationModel, "chargingstationModel");
 

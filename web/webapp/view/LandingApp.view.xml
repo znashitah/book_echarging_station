@@ -1,59 +1,66 @@
 <mvc:View
-    controllerName="ui5.walkthrough.controller.LandingApp"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns:form="sap.ui.layout.form"
-    displayBlock="true"
-    height = "100%">
-    
-    <App id="app">
-      <Shell>
-         <VBox
-            justifyContent="Center"
-            alignItems="Center"
-            width="100%"
-            height="100%">
-            
-            <items>
-               <Title text="Charge your e-car at ease" level="H1"/>
-               <Text text="Login to your account" textAlign="Center" design="Bold" width="300px" class="sapUiSmallMargin"/>
-               
-               <Input
-                  id="userIdInput"
-                  placeholder="Enter Email Address"
-                  width="300px"/>
-               <Input
-                  id="passwordInput"
-                  placeholder="Enter Password"
-                  width="300px"/>
-               
-               <Text
-                  text="Are you a customer or owner?"
-                  textAlign="Center"
-                  design="Bold"
-                  width="300px"
-                  class="sapUiSmallMargin"/>
-               
-               <RadioButtonGroup id="userTypeRadioGroup" columns="2">
+	controllerName="ui5.walkthrough.controller.LandingApp"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:form="sap.ui.layout.form"
+	displayBlock="true"
+	height="100%">
+
+	<App id="app">
+		<Shell>
+			<VBox
+				justifyContent="Center"
+				alignItems="Center"
+				width="100%"
+				height="100%">
+
+				<items>
+					<Title text="Charge your e-car at ease" level="H1" />
+					<Text text="Login to your account" textAlign="Center"
+						design="Bold" width="300px" class="sapUiSmallMargin" />
+
+					<Input
+						id="userIdInput"
+						placeholder="Enter Email Address"
+						width="300px" />
+					<Input
+						id="passwordInput"
+						placeholder="Enter Password"
+						width="300px" />
+
+					<Text
+						text="Are you a customer or owner?"
+						textAlign="Center"
+						design="Bold"
+						width="300px"
+						class="sapUiSmallMargin" />
+
+					<RadioButtonGroup id="userTypeRadioGroup" columns="2">
+						<buttons>
+							<RadioButton text="Customer" />
+							<RadioButton text="Owner" />
+						</buttons>
+					</RadioButtonGroup>
+					<!-- <SegmentedButton id="userTypeSegmentedButton"
+					width="300px">
                   <buttons>
-                     <RadioButton text="Customer"/>
-                     <RadioButton text="Owner"/>
+                     <Button
+					key="customer" text="Customer"/>
+                     <Button
+					key="owner" text="Owner"/>
                   </buttons>
-               </RadioButtonGroup>
-               <!-- <SegmentedButton id="userTypeSegmentedButton" width="300px">
-                  <buttons>
-                     <Button key="customer" text="Customer"/>
-                     <Button key="owner" text="Owner"/>
-                  </buttons>
-               </SegmentedButton> -->
-               
-               <Button
-                  text="Submit"
-                  press=".onSubmit"
-                  width="300px"/>
-            </items>
-            
-         </VBox>
-      </Shell>
-   </App>
+					</SegmentedButton> -->
+
+					<Button
+						text="Submit"
+						press=".onSubmit"
+						width="300px" />
+					<!-- Link to create a new user -->
+					<Link text="Create New User" press=".onOpenCreateUserDialog"
+						class="sapUiSmallMarginTop" />
+				</items>
+
+			</VBox>
+		</Shell>
+	</App>
 </mvc:View>
