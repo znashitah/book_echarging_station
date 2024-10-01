@@ -4,7 +4,7 @@
   "description": "Web App to book ECharging Stations ",
   "main": "index.js",
   "scripts": {
-    "start": "ui5 serve -o index.html"
+    "start": "ui5 serve --open index.html -p 8081 --accept-remote-connections"
   },
   "author": "Nashitah Zainab",
   "license": "ISC",
