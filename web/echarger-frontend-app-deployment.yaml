@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echarger-frontend-app
+  labels:
+    app: echarger-frontend-app
+spec:
+  replicas: 2  # Number of desired pod replicas
+  selector:
+    matchLabels:
+      app: echarger-frontend-app
+  template:
+    metadata:
+      labels:
+        app: echarger-frontend-app
+    spec:
+      containers:
+      - name: echarger-frontend-app
+        image: znashitah/hfu-repo:echarger-frontend-app  # Replace with your Docker Hub image
+        ports:
+        - containerPort: 8081  # Your frontend app runs on port 8081
+      imagePullSecrets:
+        - name: dockerhub-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: echarger-frontend-app-service
+spec:
+  selector:
+    app: echarger-frontend-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8081  # Maps to the port on your frontend container
+  type: LoadBalancer  # Exposes the frontend service externally

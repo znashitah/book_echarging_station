@@ -22,3 +22,8 @@ EXPOSE 8081
 # Start the application using the start script defined in package.json
 CMD ["npm", "run", "start"]
 #ENTRYPOINT ["npm", "run", "start"]
+
+
+
+#docker tag local-image:tagname new-repo:tagname
+#docker push new-repo:tagname

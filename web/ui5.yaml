@@ -33,4 +33,5 @@ server:
     afterMiddleware: compression
     mountPath: /echargerbackend
     configuration:
-      baseUri: "http://localhost:8080"
+      baseUri: "http://afddc2fbc0ba3421e9d0c992fa9efbc0-948450290.us-east-1.elb.amazonaws.com"
+      #baseUri: "http://localhost:8080"
