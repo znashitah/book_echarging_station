@@ -1,6 +1,8 @@
 ## Watch the Demo Video
 
-[![E-Charger App Demo](src/main/resources/img/Thumbnail.jpeg)](https://youtu.be/n-j1MfxSFAc)
+<a href="https://youtu.be/n-j1MfxSFAc" target="_blank">
+  <img src="src/main/resources/img/Thumbnail.jpeg" alt="E-Charger Project Video" width="400" height="240" />
+</a>
 
 Click the image above to watch the demo video on YouTube.
  
