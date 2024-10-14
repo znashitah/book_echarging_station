@@ -1,4 +1,15 @@
+## Watch the Demo Video
+
+[![E-Charger App Demo](src/main/resources/img/Thumbnail.jpeg)](https://youtu.be/n-j1MfxSFAc)
+
+Click the image above to watch the demo video on YouTube.
+ 
+
+
+
+
 ## Description
+
 
 ## Backend Techstack 
 Java, Spring/Spring Boot, Liquibase, Hybernate, Maven
