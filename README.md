@@ -8,6 +8,11 @@ Click the image above to watch the demo video on YouTube.
  
 
 
+## Architecture
+
+<img src="src/main/resources/img/ARCH.jpeg" alt="Architecture image" width="400" height="240" />
+
+
 
 
 ## Description

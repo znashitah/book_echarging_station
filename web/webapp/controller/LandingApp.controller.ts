@@ -15,7 +15,7 @@ export default class LandingAppController extends Controller {
 		// Create a JSON model to hold new user data
 		const oNewUserModel = new JSONModel({
 			userId: "",
-			firstName: "usman",
+			firstName: "",
 			lastName: "",
 			email: "",
 			password: "",
