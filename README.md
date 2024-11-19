@@ -68,4 +68,4 @@ kubectl apply -f echarger-frontend-app-deployment.yaml
 
 export KUBECONFIG=/Users/nashitahzainab/Downloads/kubeconfig--garden-kyma--c-0fe43cc-external.yaml
 
-kubectl create secret docker-registry dockerhub-secret --docker-server=https://index.docker.io/v1/   --docker-username=znashitah   --docker-password=Usman123@123  --docker-email=znashitah@gmail.com
+kubectl create secret docker-registry dockerhub-secret --docker-server=https://index.docker.io/v1/   --docker-username=znashitah   --docker-password=<Password>  --docker-email=znashitah@gmail.com
